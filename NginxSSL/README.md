@@ -133,7 +133,7 @@ certbot certonly --webroot --webroot-path=/var/www/certbot/ -d domain.ru -d www.
 
 ```shell
 # update every two months
-0 0 1 */2 * certbot renew && touch /root/certbot-logs/cert_log_$(date +"\%Y-\%m-\%d_\%H-\%M-\%S").log
+0 0 1 */2 * certbot renew && systemctl reload nginx && touch /root/certbot-logs/cert_log_$(date +"\%Y-\%m-\%d_\%H-\%M-\%S").log
 ```
 
 
